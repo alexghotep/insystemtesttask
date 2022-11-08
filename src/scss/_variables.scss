@@ -1,0 +1,49 @@
+// Width breakpoints
+$width-fullhd: 1900px;
+$width-desktop-L: 1400px;
+$width-desktop-S: 1200px;
+$width-tablet-L: 992px;
+$width-tablet-S: 768px;
+$width-mobile-L: 576px;
+$width-mobile-M: 480px;
+$width-mobile-S: 360px;
+
+$base-font-size: 16px;
+
+/* fonts */
+$font-Lato: 'Lato';
+$font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$primaryFont: $font-Lato, $font-family-sans-serif;
+//$secondaryFont: $font-family-sans-serif;
+
+/* colors */
+$color-black: var(--color-black);
+$color-almostblack: var(--color-almostblack);
+$color-white: var(--color-white);
+$color-header-bg: var(--color-header-bg);
+$color-header-bg-mobilemenu: var(--color-header-bg-mobilemenu);
+$color-link-hover: var(--color-link-hover);
+$color-accent-color: var(--color-accent-color);
+$color-footer-bg-color: var(--color-footer-bg-color);
+$color-checkout-bg-color: var(--color-checkout-bg-color);
+$color-greytext: var(--color-greytext);
+$color-stepsborder: var(--color-stepsborder);
+
+$color-range-track: var(--color-range-track);
+$color-range-track-height: var(--color-range-track-height);
+$color-range-track-border: var(--color-range-track-border);
+$color-range-track-shadow: var(--color-range-track-shadow);
+$range-track-border-radius: var(--range-track-border-radius);
+$range-track-thumb-size: var(--range-track-thumb-size);
+$range-track-thumb-shift: var(--range-track-thumb-shift);
+$range-track-thumb-moz-shift: var(--range-track-thumb-moz-shift);
+
+$headerHeightMobile: 60px;
+$headerHeightDesktop: 100px;
+
+$selectAnimationTransitionSpeed: 100ms;
+
+/* z-indexes */
+//$z-modal: 200;
+$z-header: 100;
+$z-mobilemenu: 70;

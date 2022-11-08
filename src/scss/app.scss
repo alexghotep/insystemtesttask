@@ -1,0 +1,47 @@
+// Amulet-Webpack
+
+@import "~normalize.css";
+@import "reset";
+@import '_variables';
+@import "fonts";
+
+:root {
+  --color-black: #000000;
+  --color-almostblack: #2A2B30;
+  --color-white: #FFFFFF;
+  --color-header-bg: rgba(16, 16, 29, 0.9);
+  --color-header-bg-mobilemenu: rgba(16, 16, 29, 0.99);
+  --color-link-hover: #43ABF0;
+  --color-accent-color: #3E9CDC;
+  --color-footer-bg-color: #3D4050;
+  --color-checkout-bg-color: #272733;
+  --color-greytext: #BBBBBB;
+  --color-stepsborder: #286690;
+
+  --color-range-track: rgba(255, 255, 255, 0.7);
+  --color-range-track-height: 6px;
+  //--color-range-track: rgba(255, 255, 255, 0.7);
+  --color-range-track-border: #FFFFFF;
+  --color-range-track-shadow: #353535;
+  --range-track-border-radius: 15px;
+  --range-track-thumb-size: 24px;
+  --range-track-thumb-shift: -6px;
+  --range-track-thumb-moz-shift: 0;
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+}
+
+@import 'project';

@@ -1,0 +1,316 @@
+@import "variables";
+
+.section-checkout {
+  background-color: $color-checkout-bg-color;
+  color: $color-white;
+  background-image: url(../layout/images/bg-map.png);
+  background-size: 200%;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  padding: 32px 0 48px;
+  @media screen and (min-width: $width-tablet-S) {
+    background-size: cover;
+    padding: 120px 0 150px;
+  }
+
+  h2 {
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0 0 16px 0;
+    padding: 0;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 1.2;
+    @media screen and (min-width: $width-tablet-S) {
+      font-size: 36px;
+      margin-bottom: 30px;
+    }
+  }
+
+  .warning-text {
+    color: $color-greytext;
+    text-align: center;
+    margin-bottom: 20px;
+    @media screen and (min-width: $width-tablet-S) {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__steps {
+    margin-bottom: 40px;
+    @media screen and (min-width: $width-tablet-L) {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      margin-bottom: 60px;
+    }
+    @media screen and (min-width: $width-desktop-S) {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-gap: 30px;
+      margin-bottom: 80px;
+    }
+  }
+
+  &__inputs {
+    @media screen and (min-width: $width-tablet-S) {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 20px;
+      grid-auto-flow: row;
+    }
+    @media screen and (min-width: $width-desktop-S) {
+      gap: 30px;
+    }
+
+    .inputs_field {
+      margin-bottom: 20px;
+      @media screen and (min-width: $width-tablet-S) {
+        margin-bottom: 0;
+      }
+
+      select, input {
+
+      }
+    }
+
+    .btn {
+      position: relative;
+      font-size: 15px;
+      font-weight: 600;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+      @media screen and (min-width: $width-tablet-S) {
+        margin-top: 0;
+      }
+
+      &:hover {
+        background-color: $color-stepsborder;
+        border-color: $color-stepsborder;
+        color: $color-white;
+
+        svg {
+          path {
+            fill: $color-white;
+          }
+        }
+      }
+
+      svg {
+        margin-right: 10px;
+
+        path {
+          fill: rgba(39, 39, 51, 1);
+        }
+      }
+    }
+
+    .input-name-type {
+      @media screen and (min-width: $width-tablet-S) {
+        grid-area: 1 / 1 / 2 / 2;
+      }
+    }
+
+    .input-name-email {
+      @media screen and (min-width: $width-tablet-S) {
+        grid-area: 1 / 2 / 2 / 3;
+      }
+    }
+
+    .input-name-name {
+      @media screen and (min-width: $width-tablet-S) {
+        grid-area: 1 / 3 / 2 / 4;
+      }
+    }
+
+    .input-name-range {
+      @media screen and (min-width: $width-tablet-S) {
+        grid-area: 2 / 1 / 3 / 3;
+      }
+
+      &__text {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 14px;
+        @media screen and (min-width: $width-desktop-S) {
+          font-size: 18px;
+        }
+
+        &_title {
+          padding-right: 20px;
+        }
+
+        &_value {
+          padding-left: 20px;
+          white-space: nowrap;
+        }
+      }
+    }
+
+    .input-name-attach {
+      @media screen and (min-width: $width-tablet-S) {
+        grid-area: 2 / 3 / 3 / 4;
+      }
+    }
+
+    .btn-send {
+      @media screen and (min-width: $width-tablet-S) {
+        margin-top: 15px;
+      }
+    }
+  }
+
+  span#attachText {
+    display: block;
+    position: relative;
+    //background-color: red;
+    max-width: calc(100% - 60px);
+    text-overflow: ellipsis;
+    height: 1.2em;
+    overflow: hidden;
+    word-break: break-all;
+    white-space: nowrap;
+    @media screen and (min-width: $width-tablet-S) {
+      width: 200px;
+    }
+    @media screen and (min-width: $width-desktop-S) {
+      width: 280px;
+    }
+  }
+}
+
+.sc-steps {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  @media screen and (min-width: $width-tablet-L) {
+    display: block;
+    padding: 0 10px;
+    width: 20%;
+    text-align: center;
+  }
+  @media screen and (min-width: $width-desktop-S) {
+    flex-flow: row wrap;
+    width: auto;
+    padding: 0;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  &:last-child {
+    .sc-steps__area {
+      &::after {
+        display: none;
+      }
+
+      .sc-steps__desktop-dots {
+        @media screen and (min-width: $width-tablet-L) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__area {
+    position: relative;
+    width: 64px;
+    height: 64px;
+    background-color: $color-accent-color;
+    border: 3px solid #286690;
+    border-radius: 50%;
+    text-align: center;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    flex: 0 0 auto;
+    @media screen and (min-width: $width-tablet-S) {
+      width: 100px;
+      height: 100px;
+      border: 5px solid #286690;
+    }
+    @media screen and (min-width: $width-tablet-L) {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -16px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: #C4C4C4;
+      @media screen and (min-width: $width-tablet-S) {
+        bottom: -18px;
+      }
+      @media screen and (min-width: $width-tablet-L) {
+        display: none;
+      }
+    }
+
+    &_icon {
+      svg, img {
+        display: block;
+        width: 38px;
+        @media screen and (min-width: $width-tablet-S) {
+          width: 55px;
+        }
+      }
+    }
+  }
+
+  &__desktop-dots {
+    display: none;
+    @media screen and (min-width: $width-tablet-L) {
+      position: absolute;
+      right: -84px;
+      width: 80%;
+      //background-color: rebeccapurple;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+    @media screen and (min-width: $width-desktop-S) {
+      right: -136px;
+      width: 120px;
+    }
+
+    .ssdd {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: #C4C4C4;
+
+      &_1, &_5 {
+        display: none;
+        @media screen and (min-width: $width-desktop-S) {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &__text {
+    flex: 1 1 auto;
+    margin-left: 20px;
+    @media screen and (min-width: $width-tablet-L) {
+      padding: 0 4px;
+      margin: 20px 0 0;
+    }
+  }
+}

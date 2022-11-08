@@ -1,0 +1,33 @@
+@import "variables";
+
+.simplebar-track {
+  width: 7px;
+  border-radius: 6px;
+  background-color: $color-footer-bg-color;
+
+  &.simplebar-vertical {
+    width: 7px;
+    top: 8px;
+    bottom: 8px;
+    right: 6px;
+
+    .simplebar-scrollbar {
+      &::before {
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+
+      &.simplebar-visible {
+        &::before {
+          opacity: 1;
+        }
+      }
+
+      &::before {
+        background-color: $color-accent-color;
+      }
+    }
+  }
+}

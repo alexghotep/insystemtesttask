@@ -1,0 +1,48 @@
+@import "_variables";
+
+.mobile-menu {
+  position: absolute;
+  top: $headerHeightMobile;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $color-header-bg-mobilemenu;
+  color: $color-white;
+  width: 100%;
+  height: calc(100vh - #{$headerHeightMobile});
+  overflow-y: auto;
+  padding: 20px 0 80px;
+  z-index: $z-mobilemenu;
+  transform: translateX(-100%);
+  pointer-events: none;
+  transition: transform 300ms ease;
+  @media screen and (min-width: $width-tablet-S) {
+    display: none;
+  }
+
+  &.menu-opened {
+    transform: translateX(0);
+    pointer-events: auto;
+  }
+
+  ul {
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid $color-white;
+
+    li {
+      display: block;
+      &:not(:last-child) {
+        margin-bottom: 18px;
+      }
+
+      a {
+        display: block;
+        font-size: 24px;
+        font-weight: 900;
+        line-height: 1;
+        text-transform: uppercase;
+      }
+    }
+  }
+}

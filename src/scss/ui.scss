@@ -1,0 +1,68 @@
+@import "variables";
+
+.accent-color {
+  color: $color-link-hover;
+}
+
+input:not([type=range]), select, .btn, .select-imposter {
+  background-color: rgba(255, 255, 255, 0.85);
+  border: 1px solid #FFFFFF;
+  border-radius: 3px;
+  font-size: 16px;
+  line-height: 1;
+  padding: 12px 10px;
+  width: 100%;
+  color: $color-checkout-bg-color;
+  height: 44px;
+  @media screen and (min-width: $width-tablet-S) {
+    height: 48px;
+  }
+  @media screen and (min-width: $width-desktop-S) {
+    font-size: 18px;
+  }
+  @include placeholder() {
+    color: $color-checkout-bg-color;
+  }
+
+  &:focus {
+    @include placeholder() {
+      color: rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+.btn {
+  text-align: center;
+  font-weight: 400;
+  line-height: 1.14em;
+  text-transform: uppercase;
+  padding: 15px 10px;
+  border-radius: 4px;
+  border: 1px solid;
+  cursor: pointer;
+}
+
+.btn-colors-bluebtn {
+  background: $color-accent-color;
+  color: $color-white;
+  border-color: $color-white;
+
+  &:hover {
+    background-color: $color-stepsborder;
+  }
+}
+
+.btn-colors-whitebtn {
+  background-color: $color-white;
+  color: $color-almostblack;
+  border-color: $color-almostblack;
+
+  &:hover {
+    background-color: $color-checkout-bg-color;
+    color: $color-white;
+    border-color: $color-white;
+  }
+}
+
+@import "ui-input-range-track";
+@import "custom-select";

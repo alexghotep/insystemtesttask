@@ -1,0 +1,125 @@
+@import "variables";
+@import '~simplebar';
+@import "simplebar-override";
+
+.select-imposter {
+  position: relative;
+  cursor: pointer;
+  padding: 0;
+  /*background-color: rgba(255, 255, 255, 0.85);
+  color: $color-checkout-bg-color;
+  padding: 12px 10px;*/
+  &__header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 10px;
+  }
+
+  &:hover {
+    background-color: $color-stepsborder;
+    border-color: $color-stepsborder;
+
+    span {
+      color: $color-white;
+    }
+
+    svg {
+      transition: transform $selectAnimationTransitionSpeed ease;
+
+      path {
+        fill: $color-white;
+      }
+    }
+  }
+
+  &__dropdown {
+    position: absolute;
+    top: 43px;
+    left: -1px;
+    width: calc(100% + 2px);
+    max-height: 200px;
+    background-color: $color-checkout-bg-color;
+    border-bottom: 2px solid rgba(61, 64, 80, 0.85);
+    border-left: 2px solid rgba(61, 64, 80, 0.85);
+    border-right: 2px solid rgba(61, 64, 80, 0.85);
+    border-radius: 0 0 3px 3px;
+    padding: 0;
+    z-index: 1;
+    transform: translateY(-20%);
+    opacity: 0;
+    pointer-events: none;
+    transition: all $selectAnimationTransitionSpeed ease;
+    @media screen and (min-width: $width-desktop-S) {
+      top: 46px;
+    }
+
+    ul {
+      padding: 10px;
+
+      li {
+        line-height: 1.2;
+        cursor: pointer;
+        padding-right: 0.5em;
+
+        &:not(:last-child) {
+          margin-bottom: 1em;
+        }
+
+        &:hover, &.sio-selected {
+          color: #42A9ED;
+        }
+      }
+    }
+  }
+
+  &.si-opened {
+    background-color: rgba(61, 64, 80, 0.85);
+    border-radius: 3px 3px 0 0;
+    border-color: transparent;
+    color: $color-white;
+
+    svg {
+      transform: rotate(180deg);
+
+      path {
+        fill: $color-white;
+      }
+    }
+
+    .select-imposter__dropdown {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+  }
+
+  #selectTitle {
+    height: 1.1em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    white-space: nowrap;
+    max-width: 240px;
+    @media screen and (min-width: $width-tablet-S) {
+      max-width: 160px;
+    }
+    @media screen and (min-width: $width-tablet-L) {
+      max-width: 260px;
+    }
+    @media screen and (min-width: $width-desktop-S) {
+      max-width: 330px;
+    }
+  }
+
+  span {
+  }
+
+  svg {
+    path {
+      fill: $color-checkout-bg-color;
+    }
+  }
+}

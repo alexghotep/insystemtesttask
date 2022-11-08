@@ -1,0 +1,83 @@
+@import "variables";
+
+.header {
+  padding: 18px 0;
+  min-height: $headerHeightMobile;
+  z-index: $z-header;
+  background-color: $color-header-bg;
+  color: $color-white;
+  position: fixed;
+  width: 100%;
+  @media screen and (min-width: $width-tablet-S) {
+    height: $headerHeightDesktop;
+    padding: 40px 0;
+  }
+
+  &__inner {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    &_logo {
+      &--btn {
+        //cursor: pointer;
+        display: block;
+        width: 140px;
+        @media screen and (min-width: $width-tablet-S) {
+          width: auto;
+        }
+      }
+
+      svg {
+        display: block;
+        width: 100%;
+      }
+    }
+
+    &_menu {
+    }
+  }
+}
+
+.desktop-menu {
+  display: none;
+  @media screen and (min-width: $width-tablet-S) {
+    display: block;
+    ul {
+      color: $color-white;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-end;
+      align-items: center;
+
+      li {
+        &:not(:last-child) {
+          margin-right: 40px;
+          @media screen and (min-width: $width-desktop-S) {
+            margin-right: 60px;
+          }
+        }
+
+        a {
+          font-weight: 600;
+          text-transform: uppercase;
+          font-size: 13px;
+          color: $color-white;
+          display: inline-block;
+
+          &:hover {
+            color: $color-link-hover;
+          }
+        }
+      }
+    }
+  }
+}
+
+.nav-icon {
+  display: block;
+  @media screen and (min-width: $width-tablet-S) {
+    display: none;
+  }
+}
