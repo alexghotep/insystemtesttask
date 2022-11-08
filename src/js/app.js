@@ -13,22 +13,27 @@ document.addEventListener("DOMContentLoaded", (event) => {
     gsap.from("#gsaptext5", {delay: 1.5, opacity: 0, duration: 0.5, y: 20})
     gsap.from("#gsaptext6", {delay: 2, opacity: 0, duration: 0.5})
 
-    const tl = gsap.timeline({
-        scrollTrigger: {
-            // markers: true,
-            trigger: '.section-checkout__steps',
-            scrub: true,
-            start: 'top bottom',
-            end: 'top center',
-        }
+    const tl1 = gsap.timeline({
+        scrollTrigger: {trigger: '.sc-steps__step_1', scrub: true, start: 'top bottom', end: 'top center',}
+    });
+    const tl2 = gsap.timeline({
+        scrollTrigger: {trigger: '.sc-steps__step_2', scrub: true, start: 'top bottom', end: 'top center',}
+    });
+    const tl3 = gsap.timeline({
+        scrollTrigger: {trigger: '.sc-steps__step_3', scrub: true, start: 'top bottom', end: 'top center',}
+    });
+    const tl4 = gsap.timeline({
+        scrollTrigger: {trigger: '.sc-steps__step_4', scrub: true, start: 'top bottom', end: 'top center',}
+    });
+    const tl5 = gsap.timeline({
+        scrollTrigger: {trigger: '.sc-steps__step_5', scrub: true, start: 'top bottom', end: 'top center',}
     });
 
-    tl
-        .fromTo(".sc-steps__step_1", {opacity: 0, xPercent: -100}, {opacity: 1, xPercent: 0})
-        .fromTo(".sc-steps__step_2", {opacity: 0, xPercent: -100}, {opacity: 1, xPercent: 0})
-        .fromTo(".sc-steps__step_3", {opacity: 0, xPercent: 0}, {opacity: 1, xPercent: 0})
-        .fromTo(".sc-steps__step_4", {opacity: 0, xPercent: 100}, {opacity: 1, xPercent: 0})
-        .fromTo(".sc-steps__step_5", {opacity: 0, xPercent: 100}, {opacity: 1, xPercent: 0})
+    tl1.fromTo(".sc-steps__step_1", {opacity: 0, xPercent: -100}, {opacity: 1, xPercent: 0})
+    tl2.fromTo(".sc-steps__step_2", {opacity: 0, xPercent: -100}, {opacity: 1, xPercent: 0})
+    tl3.fromTo(".sc-steps__step_3", {opacity: 0, xPercent: 0}, {opacity: 1, xPercent: 0})
+    tl4.fromTo(".sc-steps__step_4", {opacity: 0, xPercent: 100}, {opacity: 1, xPercent: 0})
+    tl5.fromTo(".sc-steps__step_5", {opacity: 0, xPercent: 100}, {opacity: 1, xPercent: 0})
     ;
 
     const
