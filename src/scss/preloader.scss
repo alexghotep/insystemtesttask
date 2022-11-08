@@ -1,0 +1,29 @@
+@import "_variables";
+
+#preloader {
+  position: fixed;
+  z-index: $z-preloader;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: $color-white;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  pointer-events: auto;
+  transition: all 300ms ease;
+  &.preloader-hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+  &.preloader-visible {
+    pointer-events: auto;
+    opacity: 1;
+  }
+}

@@ -4,14 +4,29 @@ import {ScrollTrigger} from "gsap/ScrollTrigger";
 
 document.addEventListener("DOMContentLoaded", (event) => {
     console.log('app.js (main) loaded');
+
+    function loadData() {
+        return new Promise((resolve, reject) => {
+            setTimeout(resolve, 300);
+        })
+    }
+
+    loadData()
+        .then(() => {
+            let preloaderEl = document.getElementById('preloader');
+            preloaderEl.classList.add('preloader-hidden');
+            preloaderEl.classList.remove('preloader-visible');
+        });
+
+
     gsap.registerPlugin(ScrollTrigger);
 
-    gsap.from("h1", {xPercent: -100, duration: 1})
-    gsap.to("#gsaptext2", {delay: 0.5, opacity: 1, duration: 1})
-    gsap.from("#gsaptext3", {delay: 0.5, opacity: 0, duration: 0.5, y: 20})
-    gsap.from("#gsaptext4", {delay: 1, opacity: 0, duration: 0.5, y: 20})
-    gsap.from("#gsaptext5", {delay: 1.5, opacity: 0, duration: 0.5, y: 20})
-    gsap.from("#gsaptext6", {delay: 2, opacity: 0, duration: 0.5})
+    gsap.from("h1", {delay: 0.5, xPercent: -150, duration: 1})
+    gsap.to("#gsaptext2", {delay: 1, opacity: 1, duration: 1})
+    gsap.from("#gsaptext3", {delay: 1.5, opacity: 0, duration: 0.5, y: 20})
+    gsap.from("#gsaptext4", {delay: 2, opacity: 0, duration: 0.5, y: 20})
+    gsap.from("#gsaptext5", {delay: 2.5, opacity: 0, duration: 0.5, y: 20})
+    gsap.from("#gsaptext6", {delay: 3, opacity: 0, duration: 0.5})
 
     const tl1 = gsap.timeline({
         scrollTrigger: {trigger: '.sc-steps__step_1', scrub: true, start: 'top bottom', end: 'top center',}
