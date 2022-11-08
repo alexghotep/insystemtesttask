@@ -38,6 +38,7 @@
     "webpack-progress-plugin": "^1.1.0"
   },
   "dependencies": {
+    "gsap": "^3.11.3",
     "normalize.css": "^8.0.1",
     "simplebar": "^5.3.9"
   }

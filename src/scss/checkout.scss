@@ -1,6 +1,7 @@
 @import "variables";
 
 .section-checkout {
+  overflow: hidden;
   background-color: $color-checkout-bg-color;
   color: $color-white;
   background-image: url(../layout/images/bg-map.png);

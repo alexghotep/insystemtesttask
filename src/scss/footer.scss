@@ -52,16 +52,31 @@
   }
 
   &__payment, &__socials {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-around;
-    align-items: center;
+    @media screen and (min-width: $width-mobile-L) {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-around;
+      align-items: center;
+    }
+
 
     &_item {
       display: flex;
       flex-flow: row nowrap;
       justify-content: flex-start;
       align-items: center;
+      //width: 100%;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+      &:not(:last-child) {
+        margin-bottom: 8px;
+        @media screen and (min-width: $width-mobile-L) {
+          margin: 0 auto;
+          //margin-left: auto;
+          //margin-right: auto;
+        }
+      }
 
       svg {
         display: block;

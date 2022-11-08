@@ -8,6 +8,7 @@
   background-position: 50% 50%;
   font-size: 20px;
   line-height: 1.2em;
+  overflow: hidden;
   @media screen and (min-width: $width-tablet-S) {
     padding: 200px 0;
     background-image: url(../layout/images/bg-img-desktop.png);

@@ -1,7 +1,35 @@
 import SimpleBar from "simplebar";
+import gsap from "gsap";
+import {ScrollTrigger} from "gsap/ScrollTrigger";
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", (event) => {
     console.log('app.js (main) loaded');
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.from("h1", {xPercent: -100, duration: 1})
+    gsap.to("#gsaptext2", {delay: 0.5, opacity: 1, duration: 1})
+    gsap.from("#gsaptext3", {delay: 0.5, opacity: 0, duration: 0.5, y: 20})
+    gsap.from("#gsaptext4", {delay: 1, opacity: 0, duration: 0.5, y: 20})
+    gsap.from("#gsaptext5", {delay: 1.5, opacity: 0, duration: 0.5, y: 20})
+    gsap.from("#gsaptext6", {delay: 2, opacity: 0, duration: 0.5})
+
+    const tl = gsap.timeline({
+        scrollTrigger: {
+            // markers: true,
+            trigger: '.section-checkout__steps',
+            scrub: true,
+            start: 'top bottom',
+            end: 'top center',
+        }
+    });
+
+    tl
+        .fromTo(".sc-steps__step_1", {opacity: 0, xPercent: -100}, {opacity: 1, xPercent: 0})
+        .fromTo(".sc-steps__step_2", {opacity: 0, xPercent: -100}, {opacity: 1, xPercent: 0})
+        .fromTo(".sc-steps__step_3", {opacity: 0, xPercent: 0}, {opacity: 1, xPercent: 0})
+        .fromTo(".sc-steps__step_4", {opacity: 0, xPercent: 100}, {opacity: 1, xPercent: 0})
+        .fromTo(".sc-steps__step_5", {opacity: 0, xPercent: 100}, {opacity: 1, xPercent: 0})
+    ;
 
     const
         navIcon1 = document.querySelector('#mobileMenuTrigger'),
