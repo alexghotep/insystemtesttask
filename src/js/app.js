@@ -44,18 +44,16 @@ document.addEventListener("DOMContentLoaded", (event) => {
         scrollTrigger: {trigger: '.sc-steps__step_5', scrub: true, start: 'top bottom', end: 'top center',}
     });
 
-    tl1.fromTo(".sc-steps__step_1", {opacity: 0, xPercent: -100}, {opacity: 1, xPercent: 0})
-    tl2.fromTo(".sc-steps__step_2", {opacity: 0, xPercent: -100}, {opacity: 1, xPercent: 0})
-    tl3.fromTo(".sc-steps__step_3", {opacity: 0, xPercent: 0}, {opacity: 1, xPercent: 0})
-    tl4.fromTo(".sc-steps__step_4", {opacity: 0, xPercent: 100}, {opacity: 1, xPercent: 0})
-    tl5.fromTo(".sc-steps__step_5", {opacity: 0, xPercent: 100}, {opacity: 1, xPercent: 0})
-    ;
+    tl1.fromTo(".sc-steps__step_1", {opacity: 0, xPercent: -100}, {opacity: 1, xPercent: 0});
+    tl2.fromTo(".sc-steps__step_2", {opacity: 0, xPercent: -100}, {opacity: 1, xPercent: 0});
+    tl3.fromTo(".sc-steps__step_3", {opacity: 0, xPercent: 0}, {opacity: 1, xPercent: 0});
+    tl4.fromTo(".sc-steps__step_4", {opacity: 0, xPercent: 100}, {opacity: 1, xPercent: 0});
+    tl5.fromTo(".sc-steps__step_5", {opacity: 0, xPercent: 100}, {opacity: 1, xPercent: 0});
 
     const
         navIcon1 = document.querySelector('#mobileMenuTrigger'),
         mobileMenu = document.querySelector('.mobile-menu'),
-        body = document.body
-    ;
+        body = document.body;
 
     function mobileMenuOpen() {
         navIcon1.classList.add("mm-opened");
@@ -77,8 +75,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
         }
     })
 
-    let rangeValue = document.querySelector('#rangeSlider');
-    let rangeText = document.querySelector('#rangediv');
+    let rangeValue = document.querySelector('#rangeSlider'),
+        rangeText = document.querySelector('#rangediv');
 
     rangeValue.addEventListener('input', function () {
         rangeText.innerHTML = rangeValue.value;
@@ -86,8 +84,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     let fakeBtn = document.querySelector('#chooseBtn'),
         hiddenBtn = document.querySelector('#hiddenBtn'),
-        attachText = document.querySelector('#attachText')
-    ;
+        attachText = document.querySelector('#attachText');
+
     fakeBtn.addEventListener('click', function (e) {
         e.preventDefault();
         hiddenBtn.click();
@@ -106,8 +104,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
     }
 
     let fakeSelect = document.querySelector('#fakeSelect'),
-        fakeSelectBox = document.querySelector('#fakeSelectBox')
-    ;
+        fakeSelectBox = document.querySelector('#fakeSelectBox');
+
     fakeSelect.addEventListener('click', function () {
         if (fakeSelectBox.classList.contains("si-opened")) {
             selectClose();
@@ -118,8 +116,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     const selectOptions = document.getElementsByClassName('select-imposter-option'),
         selectTitle = document.getElementById('selectTitle'),
-        selectReal = document.getElementById('inputNameSelect')
-    ;
+        selectReal = document.getElementById('inputNameSelect');
+
     for (let i = 0, len = selectOptions.length; i < len; i++) {
         selectOptions[i].addEventListener('click', function () {
             // let itemRealAll = document.querySelector("#inputNameSelect option")
@@ -138,6 +136,4 @@ document.addEventListener("DOMContentLoaded", (event) => {
             console.log('selected ' + document.getElementById('inputNameSelect').value);
         });
     }
-
-
 });
